@@ -1,4 +1,5 @@
 import { ipcRenderer, contextBridge } from 'electron'
+import { Presence, RpcStatus } from './types'
 
 // --------- Expose some API to the Renderer process ---------
 contextBridge.exposeInMainWorld('ipcRenderer', {
@@ -18,4 +19,14 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     const [channel, ...omit] = args
     return ipcRenderer.invoke(channel, ...omit)
   },
-})
+});
+
+
+contextBridge.exposeInMainWorld('electronAPI', {
+	getPresence: () => ipcRenderer.invoke('get-presence'),
+	savePresence: (data: Partial<Presence>) => ipcRenderer.send('save-presence', data),
+	resetPresence: () => ipcRenderer.send('reset-presence'),
+	openLink: (url: string) => ipcRenderer.send('open-link', url),
+	initDiscord: () => ipcRenderer.send('init-discord'),
+	getRpcStatus: (): Promise<RpcStatus> => ipcRenderer.invoke('get-rpc-status')
+});

@@ -16,3 +16,8 @@ export const PUBLIC_PATH = path.join(process.env.APP_ROOT, 'public');
 export const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
 export const IS_DEV = !!VITE_DEV_SERVER_URL;
+
+
+export const ICON_PATH = IS_DEV
+	? path.join(PUBLIC_PATH, 'icon.ico')
+	: path.join(RENDERER_DIST, 'icon.ico');

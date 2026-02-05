@@ -1,7 +1,7 @@
 {
-  "name": "discord-rpc-widget",
+  "name": "rpc-presence",
   "private": true,
-  "version": "0.1.0-dev",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/discord-rpc": "^4.0.10",
     "electron": "^30.0.1",
     "electron-builder": "^24.13.3",
     "sass": "^1.94.2",
@@ -17,5 +18,12 @@
     "vite-plugin-electron": "^0.28.6",
     "vite-plugin-electron-renderer": "^0.14.5"
   },
-  "main": "dist-electron/main.js"
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "bufferutil": "^4.1.0",
+    "discord-rpc": "^4.0.1",
+    "electron-store": "^11.0.2",
+    "utf-8-validate": "^5.0.10",
+    "ws": "^8.18.3"
+  }
 }

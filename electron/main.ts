@@ -1,7 +1,9 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Menu, } from 'electron';
 import path from 'node:path';
-
-import { PRELOAD_PATH, RENDERER_DIST, VITE_DEV_SERVER_URL } from './paths';
+import { ICON_PATH, PRELOAD_PATH, RENDERER_DIST, VITE_DEV_SERVER_URL } from './paths';
+import { savePresenceIPC } from './ipc/savePresenceIPC';
+import { getPresenceIPC } from './ipc/getPresenceIPC';
+import { initDiscordIPC } from './ipc/initDiscordIPC';
 
 
 
@@ -9,12 +11,16 @@ let win: BrowserWindow | null;
 
 function createWindow() {
  	 win = new BrowserWindow({
-		width: 350,
-		height: 500,
+		width: 400,
+		height: 460,
 		resizable: false,
 		fullscreenable: false,
+		icon: ICON_PATH,
     	webPreferences: {
       		preload: PRELOAD_PATH,
+			nodeIntegration: false,
+			contextIsolation: true,
+			devTools: false
     	},
   	});
 
@@ -27,14 +33,7 @@ function createWindow() {
   	} else {
     	win.loadFile(path.join(RENDERER_DIST, 'index.html'));
 	}	
-}
-
-app.on('window-all-closed', () => {
-  	if (process.platform !== 'darwin') {
-    	app.quit();
-    	win = null;
-  	}
-});
+};
 
 app.on('activate', () => {
 	if (BrowserWindow.getAllWindows().length === 0) {
@@ -42,8 +41,14 @@ app.on('activate', () => {
   	}
 });
 
-app.whenReady().then(createWindow);
+async function startApp() {
+	Menu.setApplicationMenu(null);
+	createWindow();
 
+	// IPC
+	getPresenceIPC();
+	savePresenceIPC();
+	initDiscordIPC();
+};
 
-
-
+app.whenReady().then(startApp);
