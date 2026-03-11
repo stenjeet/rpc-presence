@@ -19,5 +19,5 @@ export const IS_DEV = !!VITE_DEV_SERVER_URL;
 
 
 export const ICON_PATH = IS_DEV
-	? path.join(PUBLIC_PATH, 'AppIcon.ico')
-	: path.join(RENDERER_DIST, 'AppIcon.ico');
+	? path.join(PUBLIC_PATH, 'AppIcon512.ico')
+	: path.join(RENDERER_DIST, 'AppIcon512.ico');
