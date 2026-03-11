@@ -4,6 +4,7 @@ import { ICON_PATH, PRELOAD_PATH, RENDERER_DIST, VITE_DEV_SERVER_URL } from './p
 import { savePresenceIPC } from './ipc/savePresenceIPC';
 import { getPresenceIPC } from './ipc/getPresenceIPC';
 import { initDiscordIPC } from './ipc/initDiscordIPC';
+import { openLinkIPC } from './ipc/openLinkIPC';
 
 
 
@@ -49,6 +50,7 @@ async function startApp() {
 	getPresenceIPC();
 	savePresenceIPC();
 	initDiscordIPC();
+	openLinkIPC()
 };
 
 app.whenReady().then(startApp);
