@@ -25,5 +25,14 @@
     "electron-store": "^11.0.2",
     "utf-8-validate": "^5.0.10",
     "ws": "^8.18.3"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "bufferutil@4.1.0": true,
+    "electron@30.5.1": true,
+    "esbuild@0.21.5": true,
+    "fsevents@2.3.3": true,
+    "github:devsnek/node-register-scheme#e7cc9a63a1f512565da44cb57316d9fb10750e17": true,
+    "utf-8-validate@5.0.10": true
   }
 }
