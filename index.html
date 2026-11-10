@@ -1,52 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />	
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="./src/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>RPC Presence</title>
   </head>
   <body>
-    <div id="app">
-		<div class="rpc-settings">
-			<div class="rpc-settings__field">
-				<p class="rpc-settings__title">Enter Client ID:</p>
-				<input class="rpc-settings__input" id="clientIdInput" type="text" required>
-			</div>
-			<div class="rpc-settings__field">
-				<p class="rpc-settings__title">Details:</p>
-				<input class="rpc-settings__input" id="detailsInput" type="text" required>
-			</div>
-			<div class="rpc-settings__field">
-				<p class="rpc-settings__title">State:</p>
-				<input class="rpc-settings__input" id="stateInput" type="text" required>
-			</div>
-			<div class="rpc-settings__field">
-				<p class="rpc-settings__title">Image Key:</p>
-				<input class="rpc-settings__input" id="imageKeyInput" type="text" required>
-			</div>
-			<div class="rpc-settings__field">
-				<p class="rpc-settings__title">Image Text:</p>
-				<input class="rpc-settings__input" id="imageTextInput" type="text" required>
-			</div>
-		</div>
-
-		<div class="status">
-			<div id="status-div">Status: <span id="status">Idle</span></div>
-			<button id="button" class="button">Connect</button>
-		</div>
-
-		<div class="info">
-			<p class="info__author">Developed by stenjeet</p>
-  			<a id="github-link" href="https://github.com/stenjeet/rpc-presence">
-    			GitHub Repository
-  			</a>
-
-		</div>
-	</div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
