@@ -1,19 +1,18 @@
 import RPC from 'discord-rpc';
 import { Presence, RpcStatus } from '../types';
-import Store from 'electron-store';
+import { getPresenceService } from './getPresenceService';
 
 
 
-const store = new Store();
 let client: RPC.Client;
 let status: RpcStatus = 'Idle';
 
 
 export async function initDiscord() {
 
-	const presence = store.get('presence') as Presence;
+	const presence = getPresenceService();
 
-	if (!presence?.clientId) {
+	if (!presence.clientId) {
 		status = 'Error';
 		console.warn('Client ID is missing');
 		return;

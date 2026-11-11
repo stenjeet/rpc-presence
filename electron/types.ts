@@ -7,3 +7,11 @@ export type Presence = {
 };
 
 export type RpcStatus = 'Idle' | 'Connecting' | 'Connected' | 'Error';
+
+export const EMPTY_PRESENCE: Presence = {
+	clientId: '',
+	details: '',
+	state: '',
+	largeImageKey: '',
+	largeImageText: '',
+};
