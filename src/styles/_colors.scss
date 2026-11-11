@@ -1,0 +1,48 @@
+// ── Фоны и поверхности ───────────────────────────────────────────────────────
+$color-bg: #08080a; // страница, html, body
+$color-surface: #0e0e11; // карточка «Activity details», ring-offset
+$color-input: #111114; // фон полей ввода
+
+// ── Нейтральные оверлеи (белый с прозрачностью) ──────────────────────────────
+$color-overlay: rgba(255, 255, 255, 0.025); // пилюля статуса «Idle»
+$color-control-bg: rgba(255, 255, 255, 0.04); // кнопка «Disconnect»
+$color-control-bg-hover: rgba(255, 255, 255, 0.08);
+$color-control-border: rgba(255, 255, 255, 0.09);
+$color-hover: rgba(255, 255, 255, 0.05); // hover у «Reset»
+
+// ── Границы и разделители ────────────────────────────────────────────────────
+$color-border: rgba(255, 255, 255, 0.07); // карточка, инпуты, пилюля
+$color-border-hover: rgba(255, 255, 255, 0.12); // hover инпута
+$color-divider: rgba(255, 255, 255, 0.06); // разделители внутри карточки
+$color-divider-soft: rgba(255, 255, 255, 0.05); // линия над футером
+
+// ── Текст ────────────────────────────────────────────────────────────────────
+$color-text-strong: #ffffff; // заголовок «Presence editor»
+$color-text: #f4f4f5; // zinc-100 — основной текст
+$color-text-label: #e4e4e7; // zinc-200 — подписи полей
+$color-text-secondary: #d4d4d8; // zinc-300 — текст «Disconnect»
+$color-text-subtle: #a1a1aa; // zinc-400 — hover ссылки GitHub
+$color-text-muted: #71717a; // zinc-500 — подзаголовок, «Reset», статус
+$color-text-dim: #52525b; // zinc-600 — хинты, сноска под кнопкой
+$color-text-faint: #3f3f46; // zinc-700 — плейсхолдеры, футер
+
+// ── Акцент (violet) ──────────────────────────────────────────────────────────
+$color-accent: #8b5cf6; // violet-500 — основная кнопка
+$color-accent-hover: #a78bfa; // violet-400 — hover кнопки
+$color-accent-contrast: #ffffff; // текст на акценте
+$color-accent-ring: rgba(139, 92, 246, 0.1); // focus-ring вокруг инпута
+$color-accent-selection: rgba(139, 92, 246, 0.3); // ::selection
+$color-accent-border: rgba(167, 139, 250, 0.7); // рамка инпута в фокусе
+$color-accent-glow: rgba(124, 92, 255, 0.08); // радиальное свечение страницы
+$color-accent-shadow: rgba(124, 92, 255, 0.2); // тень под кнопкой
+
+// ── Статусы ──────────────────────────────────────────────────────────────────
+$color-success: #34d399; // emerald-400 — точка «Connected»
+$color-success-glow: rgba(52, 211, 153, 0.7); // её свечение
+$color-idle: #52525b; // zinc-600 — точка «Idle»
+
+// ── Ошибки ───────────────────────────────────────────────────────────────────
+$color-danger-text: #fca5a5; // red-300 — текст ошибки
+$color-danger: #f87171; // red-400 — рамка/фокус ошибки
+$color-danger-border: rgba(248, 113, 113, 0.7);
+$color-danger-ring: rgba(248, 113, 113, 0.1);
