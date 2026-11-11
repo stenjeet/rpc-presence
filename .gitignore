@@ -26,3 +26,8 @@ dist-ssr
 *.sw?
 
 release/
+.tmp/
+AGENTS.md
+
+.figma-redesing/
+docs/
