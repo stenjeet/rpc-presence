@@ -17,7 +17,7 @@ declare global {
       		getPresence: () => Promise<Presence>;
       		savePresence: (data: Partial<Presence>) => void;
 			resetPresence: () => void;
-			openLink: (url: string) => Promise<void>
+			openLink: (url: string) => void;
 			initDiscord: () => void;
 			getRpcStatus: () => Promise<RpcStatus>;
     	};
